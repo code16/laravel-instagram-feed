@@ -138,7 +138,7 @@ class Profile extends Model
 
         try {
             $feed = $instagram->fetchMedia($this->latestToken(), $limit);
-            Cache::forever($this->cacheKey(), $feed);
+            Cache::remember($this->cacheKey(), config('instagram-feed.cache_duration')??(60*60), fn() => $feed);
 
             return new InstagramFeed($this, $feed);
         } catch (Exception $e) {

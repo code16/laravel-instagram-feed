@@ -18,6 +18,7 @@ return [
      */
     'base_url' => null,
 
+    'cache_duration' => 60 * 60,
     /*
      * The route that will respond to the Instagram callback during the OAuth process.
      * Only enter the path without the leading slash. You need to ensure that you have registered
