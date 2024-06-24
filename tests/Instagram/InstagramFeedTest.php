@@ -12,10 +12,8 @@ use Illuminate\Support\Facades\Http;
 
 class InstagramFeedTest extends TestCase
 {
-    /**
-     * @test
-     */
-    public function can_get_the_feed_for_a_profile()
+
+    public function test_can_get_the_feed_for_a_profile()
     {
 
         $this->setUpTestProfileWithFeed('test user');
@@ -29,10 +27,8 @@ class InstagramFeedTest extends TestCase
         }
     }
 
-    /**
-     *@test
-     */
-    public function the_profile_is_available_from_the_feed()
+
+    public function test_the_profile_is_available_from_the_feed()
     {
         $profile = $this->setUpTestProfileWithFeed('test user');
 
@@ -41,10 +37,8 @@ class InstagramFeedTest extends TestCase
         $this->assertTrue($feed->profile->is($profile));
     }
 
-    /**
-     *@test
-     */
-    public function the_required_limit_for_the_feed_can_be_used()
+
+    public function test_the_required_limit_for_the_feed_can_be_used()
     {
         $this->setUpTestProfileWithFeed('test user');
 
@@ -54,10 +48,8 @@ class InstagramFeedTest extends TestCase
     }
 
 
-    /**
-     *@test
-     */
-    public function can_use_profile_directly_to_get_feed()
+
+    public function test_can_use_profile_directly_to_get_feed()
     {
         $profile = $this->setUpTestProfileWithFeed('test user');
 
@@ -66,10 +58,8 @@ class InstagramFeedTest extends TestCase
         $this->assertCount(4, $feed);
     }
 
-    /**
-     *@test
-     */
-    public function feed_can_be_refreshed()
+
+    public function test_feed_can_be_refreshed()
     {
         $profile = $this->setUpTestProfileWithFeed('test user');
         cache([$profile->cacheKey() => [
@@ -88,10 +78,8 @@ class InstagramFeedTest extends TestCase
         }
     }
 
-    /**
-     *@test
-     */
-    public function the_feed_can_be_accessed_as_a_collection()
+
+    public function test_the_feed_can_be_accessed_as_a_collection()
     {
         $this->setUpTestProfileWithFeed('test user');
 

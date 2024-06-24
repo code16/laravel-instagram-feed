@@ -19,20 +19,16 @@ use Illuminate\Support\Str;
 class AccessTokenControllerTest extends TestCase
 {
     use FakesInstagramCalls;
-    /**
-     *@test
-     */
-    public function the_route_for_the_instagram_auth_flow_redirect_is_registered()
+
+    public function test_the_route_for_the_instagram_auth_flow_redirect_is_registered()
     {
         $response = $this->get(config('instagram-feed.auth_callback_route'));
 
         $this->assertNotEquals(404, $response->getStatusCode());
     }
 
-    /**
-     *@test
-     */
-    public function it_handles_a_redirect_with_a_valid_profile_id_and_code()
+
+    public function test_it_handles_a_redirect_with_a_valid_profile_id_and_code()
     {
         $this->withoutExceptionHandling();
         $this->app['config']->set('instagram-feed.success_redirect_to', 'success');
@@ -60,10 +56,8 @@ class AccessTokenControllerTest extends TestCase
         $this->assertNull($profile->fresh()->identity_token);
     }
 
-    /**
-     *@test
-     */
-    public function it_redirects_if_it_cannot_resolve_the_profile_from_the_redirect()
+
+    public function test_it_redirects_if_it_cannot_resolve_the_profile_from_the_redirect()
     {
         $this->withoutExceptionHandling();
         $this->app['config']->set('instagram-feed.failure_redirect_to', 'failed_auth');
@@ -82,10 +76,7 @@ class AccessTokenControllerTest extends TestCase
     }
 
 
-    /**
-     *@test
-     */
-    public function it_redirects_if_it_fails_to_get_request_token()
+    public function test_it_redirects_if_it_fails_to_get_request_token()
     {
         $this->withoutExceptionHandling();
         $this->app['config']->set('instagram-feed.failure_redirect_to', 'failed_auth');
@@ -107,10 +98,8 @@ class AccessTokenControllerTest extends TestCase
         $this->assertCount(0, AccessToken::all());
     }
 
-    /**
-     *@test
-     */
-    public function it_redirects_if_it_fails_to_get_an_access_token()
+
+    public function test_it_redirects_if_it_fails_to_get_an_access_token()
     {
         $this->withoutExceptionHandling();
         $this->app['config']->set('instagram-feed.failure_redirect_to', 'failed_auth');

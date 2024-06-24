@@ -35,20 +35,16 @@ class ProfilesTest extends TestCase
         ]);
     }
 
-    /**
-     * @test
-     */
-    public function a_basic_profile_can_be_created_via_command()
+
+    public function test_a_basic_profile_can_be_created_via_command()
     {
         Artisan::call('instagram-feed:profile', ['username' => 'test_username']);
 
         $this->assertDatabaseHas('dymantic_instagram_basic_profiles', ['username' => 'test_username']);
     }
 
-    /**
-     * @test
-     */
-    public function the_profile_username_needs_to_be_unique()
+
+    public function test_the_profile_username_needs_to_be_unique()
     {
         $existing_profile = Profile::create(['username' => 'test_user']);
 
@@ -60,10 +56,8 @@ class ProfilesTest extends TestCase
         }
     }
 
-    /**
-     *@test
-     */
-    public function can_fetch_a_profile_for_a_given_username()
+
+    public function test_can_fetch_a_profile_for_a_given_username()
     {
         $profile = Profile::create(['username' => 'test_user']);
 
@@ -74,10 +68,8 @@ class ProfilesTest extends TestCase
         $this->assertNull($non_existent);
     }
 
-    /**
-     * @test
-     */
-    public function a_profile_can_generate_the_correct_auth_init_url()
+
+    public function test_a_profile_can_generate_the_correct_auth_init_url()
     {
         $profile = Profile::create(['username' => 'test_user']);
         $app_url = rtrim(config('app.url'), '/');
@@ -88,10 +80,8 @@ class ProfilesTest extends TestCase
         $this->assertMatchesRegularExpression($expected, $profile->getInstagramAuthUrl());
     }
 
-    /**
-     * @test
-     */
-    public function a_profile_can_request_an_access_token_from_a_successful_auth_redirect()
+
+    public function test_a_profile_can_request_an_access_token_from_a_successful_auth_redirect()
     {
         $profile = Profile::create(['username' => 'test_user']);
 
@@ -114,10 +104,8 @@ class ProfilesTest extends TestCase
         ]);
     }
 
-    /**
-     *@test
-     */
-    public function profile_can_refresh_its_tokens()
+
+    public function test_profile_can_refresh_its_tokens()
     {
         $profile = Profile::create(['username' => 'test_user']);
         $token = AccessToken::create([
@@ -147,10 +135,8 @@ class ProfilesTest extends TestCase
         ]);
     }
 
-    /**
-     * @test
-     */
-    public function requesting_a_token_from_a_denied_auth_redirect_throws_an_exception()
+
+    public function test_requesting_a_token_from_a_denied_auth_redirect_throws_an_exception()
     {
         $profile = Profile::create(['username' => 'test_user']);
 
@@ -167,10 +153,8 @@ class ProfilesTest extends TestCase
         Http::assertNothingSent();
     }
 
-    /**
-     * @test
-     */
-    public function exceptions_raised_by_requesting_access_token_will_be_caught_and_thrown_as_access_token_exception(
+
+    public function test_exceptions_raised_by_requesting_access_token_will_be_caught_and_thrown_as_access_token_exception(
     )
     {
         $profile = Profile::create(['username' => 'test_user']);
@@ -190,10 +174,8 @@ class ProfilesTest extends TestCase
         }
     }
 
-    /**
-     * @test
-     */
-    public function a_profile_that_has_a_token_on_record_is_considered_to_have_instagram_access()
+
+    public function test_a_profile_that_has_a_token_on_record_is_considered_to_have_instagram_access()
     {
         $profile_with_token = Profile::create(['username' => 'profile one']);
         $profile_without_token = Profile::create(['username' => 'profile two']);
@@ -204,10 +186,8 @@ class ProfilesTest extends TestCase
         $this->assertFalse($profile_without_token->fresh()->hasInstagramAccess());
     }
 
-    /**
-     * @test
-     */
-    public function a_profile_can_return_its_access_token_string()
+
+    public function test_a_profile_can_return_its_access_token_string()
     {
         $profile = Profile::create(['username' => 'test_user']);
         AccessToken::createFromResponseArray($profile, $this->validUserWithToken());
@@ -215,10 +195,8 @@ class ProfilesTest extends TestCase
         $this->assertEquals('VALID_LONG_LIVED_TOKEN', $profile->fresh()->accessToken());
     }
 
-    /**
-     * @test
-     */
-    public function a_profile_with_an_access_token_can_fetch_its_recent_media()
+
+    public function test_a_profile_with_an_access_token_can_fetch_its_recent_media()
     {
         $profile = Profile::create(['username' => 'test_user']);
         $token = AccessToken::createFromResponseArray($profile, $this->validUserWithToken());
@@ -236,10 +214,8 @@ class ProfilesTest extends TestCase
 
 
 
-    /**
-     *@test
-     */
-    public function the_feed_is_returned_as_an_InstagramFeed()
+
+    public function test_the_feed_is_returned_as_an_InstagramFeed()
     {
         $profile = Profile::create(['username' => 'test_user']);
         $token = AccessToken::createFromResponseArray($profile, $this->validUserWithToken());
@@ -255,20 +231,16 @@ class ProfilesTest extends TestCase
         $this->assertInstanceOf(InstagramFeed::class, $feed);
     }
 
-    /**
-     * @test
-     */
-    public function the_profile_has_a_cache_key()
+
+    public function test_the_profile_has_a_cache_key()
     {
         $profile = Profile::create(['username' => 'test_user']);
 
         $this->assertEquals(Profile::CACHE_KEY_BASE . ":" . $profile->id, $profile->cacheKey());
     }
 
-    /**
-     * @test
-     */
-    public function the_profile_feed_is_cached()
+
+    public function test_the_profile_feed_is_cached()
     {
         $profile = Profile::create(['username' => 'test_user']);
         $token = AccessToken::createFromResponseArray($profile, $this->validUserWithToken());
@@ -290,10 +262,8 @@ class ProfilesTest extends TestCase
         $this->assertEquals($feed, $second_call_to_feed);
     }
 
-    /**
-     * @test
-     */
-    public function the_feed_for_a_profile_can_be_refreshed()
+
+    public function test_the_feed_for_a_profile_can_be_refreshed()
     {
         $old_feed = [
             ['low' => 'test_low', 'thumb' => 'test_thumb', 'standard' => 'test_standard']
@@ -317,10 +287,8 @@ class ProfilesTest extends TestCase
         $this->assertEquals($feed->collect()->all(), cache()->get($profile->cacheKey()));
     }
 
-    /**
-     * @test
-     */
-    public function a_profile_can_clear_its_token()
+
+    public function test_a_profile_can_clear_its_token()
     {
         $profile = Profile::create(['username' => 'test user']);
         AccessToken::createFromResponseArray($profile, $this->validUserWithToken());
@@ -333,10 +301,8 @@ class ProfilesTest extends TestCase
         $this->assertEquals(0, AccessToken::count());
     }
 
-    /**
-     * @test
-     */
-    public function the_feed_method_will_not_throw_exceptions_but_only_return_empty_collection()
+
+    public function test_the_feed_method_will_not_throw_exceptions_but_only_return_empty_collection()
     {
         $profile = Profile::create(['username' => 'test_user']);
         AccessToken::createFromResponseArray($profile, $this->validUserWithToken());
@@ -350,10 +316,8 @@ class ProfilesTest extends TestCase
         $this->assertNull($feed->profile);
     }
 
-    /**
-     * @test
-     */
-    public function the_refresh_feed_method_will_not_overwrite_cache_with_failed_response()
+
+    public function test_the_refresh_feed_method_will_not_overwrite_cache_with_failed_response()
     {
         $this->withoutExceptionHandling();
 

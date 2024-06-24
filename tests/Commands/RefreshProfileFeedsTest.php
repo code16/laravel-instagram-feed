@@ -18,9 +18,7 @@ use Illuminate\Support\Facades\Mail;
 class RefreshProfileFeedsTest extends TestCase
 {
     use FakesInstagramCalls;
-    /**
-     *@test
-     */
+
     public function calling_the_command_will_refresh_the_feeds()
     {
         $profileA = Profile::create(['username' => 'test user']);
@@ -44,9 +42,7 @@ class RefreshProfileFeedsTest extends TestCase
 
     }
 
-    /**
-     *@test
-     */
+
     public function non_authorized_profiles_are_not_refreshed()
     {
         $authorized_profile = Profile::create(['username' => 'test user']);
@@ -68,9 +64,7 @@ class RefreshProfileFeedsTest extends TestCase
         $this->assertFalse(cache()->has($unauthorized_profile->cacheKey()));
     }
 
-    /**
-     *@test
-     */
+
     public function an_email_will_be_sent_if_an_error_occurs_in_refreshing()
     {
         Mail::fake();
@@ -96,10 +90,8 @@ class RefreshProfileFeedsTest extends TestCase
         });
     }
 
-    /**
-     *@test
-     */
-    public function a_profile_with_an_expired_or_invalid_token_will_have_its_token_deleted()
+
+    public function test_a_profile_with_an_expired_or_invalid_token_will_have_its_token_deleted()
     {
         Mail::fake();
 

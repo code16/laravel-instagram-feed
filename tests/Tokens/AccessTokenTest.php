@@ -10,10 +10,8 @@ use Dymantic\InstagramFeed\Tests\TestCase;
 class AccessTokenTest extends TestCase
 {
     use FakesInstagramCalls;
-    /**
-     *@test
-     */
-    public function a_token_can_be_created_from_an_instagram_response_array()
+
+    public function test_a_token_can_be_created_from_an_instagram_response_array()
     {
         $profile = Profile::create(['username' => 'test user']);
         $token = AccessToken::createFromResponseArray($profile, $this->validUserWithToken());

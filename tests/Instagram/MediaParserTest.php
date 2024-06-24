@@ -8,10 +8,8 @@ use Dymantic\InstagramFeed\Tests\TestCase;
 
 class MediaParserTest extends TestCase
 {
-    /**
-     *@test
-     */
-    public function it_parses_an_image_correctly()
+
+    public function test_it_parses_an_image_correctly()
     {
         $json = '{
             "id": "18046738186210442",
@@ -37,10 +35,8 @@ class MediaParserTest extends TestCase
 
     }
 
-    /**
-     *@test
-     */
-    public function it_parses_a_video_correctly()
+
+    public function test_it_parses_a_video_correctly()
     {
         $json = '{
       "id": "18033634498224799",
@@ -67,10 +63,8 @@ class MediaParserTest extends TestCase
         $this->assertCount(0, $media->children);
     }
 
-    /**
-     *@test
-     */
-    public function it_parses_a_carousel_item_correctly()
+
+    public function test_it_parses_a_carousel_item_correctly()
     {
         $json = '{
       "id": "17853951361863258",

@@ -16,10 +16,8 @@ use Illuminate\Support\Facades\Http;
 class RefreshTokensCommandTest extends TestCase
 {
     use FakesInstagramCalls;
-    /**
-     * @test
-     */
-    public function tokens_get_refreshed()
+
+    public function test_tokens_get_refreshed()
     {
         $profileA = Profile::create(['username' => 'testA']);
         $profileB = Profile::create(['username' => 'testB']);
