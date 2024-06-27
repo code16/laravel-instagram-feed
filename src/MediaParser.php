@@ -67,6 +67,7 @@ class MediaParser
                 return [
                     'type' => strtolower($child['media_type']),
                     'url'  => $child['media_url'],
+                    'thumbnail_url' => $child['thumbnail_url']??null,
                     'id'   => $child['id'],
                 ];
             })->values()->all(),
