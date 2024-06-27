@@ -16,8 +16,8 @@ use Illuminate\Support\Str;
 
 class Profile extends Model
 {
-    const CACHE_KEY_BASE = 'dymantic_instagram_feed';
-    protected $table = 'dymantic_instagram_basic_profiles';
+    const CACHE_KEY_BASE = 'instagram_feed';
+    protected $table = 'instagram_basic_profiles';
 
     protected $guarded = [];
 

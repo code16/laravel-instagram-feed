@@ -24,12 +24,12 @@ class RefreshTokensCommandTest extends TestCase
         $tokenA = $this->makeToken($profileA);
         $tokenB = $this->makeToken($profileB);
 
-        $this->assertDatabaseHas('dymantic_instagram_feed_tokens', [
+        $this->assertDatabaseHas('instagram_feed_tokens', [
             'profile_id' => 1,
             'access_code' => 'VALID_LONG_LIVED_TOKEN',
         ]);
 
-        $this->assertDatabaseHas('dymantic_instagram_feed_tokens', [
+        $this->assertDatabaseHas('instagram_feed_tokens', [
             'profile_id' => 2,
             'access_code' => 'VALID_LONG_LIVED_TOKEN',
         ]);
@@ -41,12 +41,12 @@ class RefreshTokensCommandTest extends TestCase
 
         Artisan::call('instagram-feed:refresh-tokens');
 
-        $this->assertDatabaseHas('dymantic_instagram_feed_tokens', [
+        $this->assertDatabaseHas('instagram_feed_tokens', [
             'profile_id' => 1,
             'access_code' => 'REFRESHED_LONG_LIVED_TOKEN',
         ]);
 
-        $this->assertDatabaseHas('dymantic_instagram_feed_tokens', [
+        $this->assertDatabaseHas('instagram_feed_tokens', [
             'profile_id' => 2,
             'access_code' => 'REFRESHED_LONG_LIVED_TOKEN',
         ]);

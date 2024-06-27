@@ -10,7 +10,7 @@ class AccessToken extends Model
 {
     protected $guarded = [];
 
-    protected $table = 'dymantic_instagram_feed_tokens';
+    protected $table = 'instagram_feed_tokens';
 
     /**
      * @param $profile

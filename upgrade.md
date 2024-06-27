@@ -2,9 +2,9 @@
 
 ### v2.* -> v3.*
 
-#### Migration for `dymantic_instagram_basic_profiles` table
+#### Migration for `instagram_basic_profiles` table
 
-You will need to add a new column onto the `dymantic_instagram_basic_profiles` table.
+You will need to add a new column onto the `instagram_basic_profiles` table.
 
 ````php
 
@@ -15,7 +15,7 @@ class UpdateInstagramBasicProfileTable extends Migration
      */
     public function up()
     {
-        Schema::table('dymantic_instagram_basic_profiles', function (Blueprint $table) {
+        Schema::table('instagram_basic_profiles', function (Blueprint $table) {
             $table->string('identity_token')->nullable();
         });
     }
@@ -24,7 +24,7 @@ class UpdateInstagramBasicProfileTable extends Migration
      */
     public function down()
     {
-        Schema::table('dymantic_instagram_basic_profiles', function (Blueprint $table) {
+        Schema::table('instagram_basic_profiles', function (Blueprint $table) {
             $table->dropColumns('identity_token');
         });
     }

@@ -1,21 +1,15 @@
 # Laravel Instagram Feed
 
-[![Build Status](https://travis-ci.org/Dymantic/laravel-instagram-feed.svg?branch=master)](https://travis-ci.org/Dymantic/laravel-instagram-feed)
-
 ## Easily include your Instagram feed(s) in your project.
 
 The aim of this package is to make it as simple and user-friendly as possible to include your Instagram feed in your project, using Instagram's Basic Display API. The package stores the feed in your cache, and provides you with the ability to refresh your feeds on whatever schedule suits you.
 
-**Note** This package requires PHP 8. If that is not your cup of tea, then you may continue to use [v2](https://github.com/Dymantic/laravel-instagram-feed/tree/v2.6.0).
 
 ### Installation
 
 ```
-composer require dymantic/laravel-instagram-feed
+composer require code16/laravel-instagram-feed
 ```
-
-**Note** If you are upgrading from v2.\*, refer to the [upgrade guide](upgrade.md), as there are breaking changes.
-**Also Note** This version requires PHP 8 and up, so if you are still on PHP 7 and don't specify a version when you install, composer will pull in ^v2, in which case you should be reading [this page](https://github.com/Dymantic/laravel-instagram-feed/tree/v2.6.0).
 
 ## Tutorial
 

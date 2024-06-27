@@ -40,7 +40,7 @@ class ProfilesTest extends TestCase
     {
         Artisan::call('instagram-feed:profile', ['username' => 'test_username']);
 
-        $this->assertDatabaseHas('dymantic_instagram_basic_profiles', ['username' => 'test_username']);
+        $this->assertDatabaseHas('instagram_basic_profiles', ['username' => 'test_username']);
     }
 
 
@@ -96,7 +96,7 @@ class ProfilesTest extends TestCase
 
         $profile->requestToken($this->successAuthRequest());
 
-        $this->assertDatabaseHas('dymantic_instagram_feed_tokens', [
+        $this->assertDatabaseHas('instagram_feed_tokens', [
             'profile_id'           => $profile->id,
             'access_code'          => 'VALID_LONG_LIVED_TOKEN',
             'username'             => 'instagram_test_username',
@@ -125,7 +125,7 @@ class ProfilesTest extends TestCase
         $profile->refreshToken();
 
 
-        $this->assertDatabaseHas('dymantic_instagram_feed_tokens', [
+        $this->assertDatabaseHas('instagram_feed_tokens', [
             'profile_id'           => $profile->id,
             'access_code'          => 'REFRESHED_LONG_LIVED_TOKEN',
             'username'             => 'instagram_test_username',
