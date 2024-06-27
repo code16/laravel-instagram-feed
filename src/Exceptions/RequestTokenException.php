@@ -1,6 +1,6 @@
 <?php
 
-namespace Dymantic\InstagramFeed\Exceptions;
+namespace Code16\InstagramFeed\Exceptions;
 
 class RequestTokenException extends \Exception
 {

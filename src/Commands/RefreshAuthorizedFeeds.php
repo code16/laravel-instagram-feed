@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Dymantic\InstagramFeed\Commands;
+namespace Code16\InstagramFeed\Commands;
 
 
-use Dymantic\InstagramFeed\Exceptions\BadTokenException;
-use Dymantic\InstagramFeed\Mail\FeedRefreshFailed;
-use Dymantic\InstagramFeed\Profile;
+use Code16\InstagramFeed\Exceptions\BadTokenException;
+use Code16\InstagramFeed\Mail\FeedRefreshFailed;
+use Code16\InstagramFeed\Profile;
 use Exception;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Config;

@@ -1,8 +1,8 @@
 <?php
 
-namespace Dymantic\InstagramFeed\Tests;
+namespace Code16\InstagramFeed\Tests;
 
-use Dymantic\InstagramFeed\InstagramFeedServiceProvider;
+use Code16\InstagramFeed\InstagramFeedServiceProvider;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Foundation\Exceptions\Handler;

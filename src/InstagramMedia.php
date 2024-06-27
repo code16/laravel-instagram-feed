@@ -1,6 +1,6 @@
 <?php
 
-namespace Dymantic\InstagramFeed;
+namespace Code16\InstagramFeed;
 
 class InstagramMedia
 {

@@ -1,16 +1,16 @@
 <?php
 
-namespace Dymantic\InstagramFeed\Tests\Profiles;
+namespace Code16\InstagramFeed\Tests\Profiles;
 
-use Dymantic\InstagramFeed\AccessToken;
-use Dymantic\InstagramFeed\Exceptions\AccessTokenRequestException;
-use Dymantic\InstagramFeed\Exceptions\RequestTokenException;
-use Dymantic\InstagramFeed\Instagram;
-use Dymantic\InstagramFeed\InstagramFeed;
-use Dymantic\InstagramFeed\Profile;
-use Dymantic\InstagramFeed\SimpleClient;
-use Dymantic\InstagramFeed\Tests\FakesInstagramCalls;
-use Dymantic\InstagramFeed\Tests\TestCase;
+use Code16\InstagramFeed\AccessToken;
+use Code16\InstagramFeed\Exceptions\AccessTokenRequestException;
+use Code16\InstagramFeed\Exceptions\RequestTokenException;
+use Code16\InstagramFeed\Instagram;
+use Code16\InstagramFeed\InstagramFeed;
+use Code16\InstagramFeed\Profile;
+use Code16\InstagramFeed\SimpleClient;
+use Code16\InstagramFeed\Tests\FakesInstagramCalls;
+use Code16\InstagramFeed\Tests\TestCase;
 use Illuminate\Http\Client\Request;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Artisan;

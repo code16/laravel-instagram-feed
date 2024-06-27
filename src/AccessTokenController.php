@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Dymantic\InstagramFeed;
+namespace Code16\InstagramFeed;
 
 
 use Exception;

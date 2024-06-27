@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Dymantic\InstagramFeed;
+namespace Code16\InstagramFeed;
 
 
-use Dymantic\InstagramFeed\Exceptions\BadTokenException;
-use Dymantic\InstagramFeed\Exceptions\HttpException;
+use Code16\InstagramFeed\Exceptions\BadTokenException;
+use Code16\InstagramFeed\Exceptions\HttpException;
 use GuzzleHttp\Exception\ClientException;
 use Illuminate\Support\Facades\Config;
 

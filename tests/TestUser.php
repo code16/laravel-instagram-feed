@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Dymantic\InstagramFeed\Tests;
+namespace Code16\InstagramFeed\Tests;
 
 
 use Illuminate\Database\Eloquent\Model;

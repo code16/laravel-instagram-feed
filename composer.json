@@ -25,12 +25,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Dymantic\\InstagramFeed\\": "src"
+            "Code16\\InstagramFeed\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Dymantic\\InstagramFeed\\Tests\\": "tests",
+            "Code16\\InstagramFeed\\Tests\\": "tests",
             "Workbench\\App\\": "workbench/app/",
             "Workbench\\Database\\Factories\\": "workbench/database/factories/",
             "Workbench\\Database\\Seeders\\": "workbench/database/seeders/"
@@ -39,7 +39,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Dymantic\\InstagramFeed\\InstagramFeedServiceProvider"
+                "Code16\\InstagramFeed\\InstagramFeedServiceProvider"
             ]
         }
     },

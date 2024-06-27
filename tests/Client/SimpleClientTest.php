@@ -1,12 +1,12 @@
 <?php
 
-namespace Dymantic\InstagramFeed\Tests\Client;
+namespace Code16\InstagramFeed\Tests\Client;
 
-use Dymantic\InstagramFeed\Exceptions\BadTokenException;
-use Dymantic\InstagramFeed\Exceptions\HttpException;
-use Dymantic\InstagramFeed\SimpleClient;
-use Dymantic\InstagramFeed\Tests\MockableDummyHttpClient;
-use Dymantic\InstagramFeed\Tests\TestCase;
+use Code16\InstagramFeed\Exceptions\BadTokenException;
+use Code16\InstagramFeed\Exceptions\HttpException;
+use Code16\InstagramFeed\SimpleClient;
+use Code16\InstagramFeed\Tests\MockableDummyHttpClient;
+use Code16\InstagramFeed\Tests\TestCase;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\RequestOptions;
 use Illuminate\Support\Facades\Http;

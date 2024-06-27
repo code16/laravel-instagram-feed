@@ -1,6 +1,6 @@
 <?php
 
-namespace Dymantic\InstagramFeed\Mail;
+namespace Code16\InstagramFeed\Mail;
 
 use Illuminate\Mail\Mailable;
 

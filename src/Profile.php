@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Dymantic\InstagramFeed;
+namespace Code16\InstagramFeed;
 
 
-use Dymantic\InstagramFeed\Exceptions\AccessTokenRequestException;
-use Dymantic\InstagramFeed\Exceptions\RequestTokenException;
+use Code16\InstagramFeed\Exceptions\AccessTokenRequestException;
+use Code16\InstagramFeed\Exceptions\RequestTokenException;
 use Exception;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;

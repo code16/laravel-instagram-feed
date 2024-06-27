@@ -1,16 +1,16 @@
 <?php
 
 
-namespace Dymantic\InstagramFeed\Tests\Instagram;
+namespace Code16\InstagramFeed\Tests\Instagram;
 
 
-use Dymantic\InstagramFeed\AccessToken;
-use Dymantic\InstagramFeed\Instagram;
-use Dymantic\InstagramFeed\Profile;
-use Dymantic\InstagramFeed\SimpleClient;
-use Dymantic\InstagramFeed\Tests\FakesInstagramCalls;
-use Dymantic\InstagramFeed\Tests\MockableDummyHttpClient;
-use Dymantic\InstagramFeed\Tests\TestCase;
+use Code16\InstagramFeed\AccessToken;
+use Code16\InstagramFeed\Instagram;
+use Code16\InstagramFeed\Profile;
+use Code16\InstagramFeed\SimpleClient;
+use Code16\InstagramFeed\Tests\FakesInstagramCalls;
+use Code16\InstagramFeed\Tests\MockableDummyHttpClient;
+use Code16\InstagramFeed\Tests\TestCase;
 use Illuminate\Http\Client\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;

@@ -1,15 +1,15 @@
 <?php
 
-namespace Dymantic\InstagramFeed\Tests\Commands;
+namespace Code16\InstagramFeed\Tests\Commands;
 
-use Dymantic\InstagramFeed\AccessToken;
-use Dymantic\InstagramFeed\Exceptions\BadTokenException;
-use Dymantic\InstagramFeed\Instagram;
-use Dymantic\InstagramFeed\Mail\FeedRefreshFailed;
-use Dymantic\InstagramFeed\Profile;
-use Dymantic\InstagramFeed\SimpleClient;
-use Dymantic\InstagramFeed\Tests\FakesInstagramCalls;
-use Dymantic\InstagramFeed\Tests\TestCase;
+use Code16\InstagramFeed\AccessToken;
+use Code16\InstagramFeed\Exceptions\BadTokenException;
+use Code16\InstagramFeed\Instagram;
+use Code16\InstagramFeed\Mail\FeedRefreshFailed;
+use Code16\InstagramFeed\Profile;
+use Code16\InstagramFeed\SimpleClient;
+use Code16\InstagramFeed\Tests\FakesInstagramCalls;
+use Code16\InstagramFeed\Tests\TestCase;
 use Illuminate\Http\Client\Request;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Http;

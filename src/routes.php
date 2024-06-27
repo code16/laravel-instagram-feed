@@ -1,3 +1,3 @@
 <?php
 
-Route::get(config('instagram-feed.auth_callback_route'), 'Dymantic\InstagramFeed\AccessTokenController@handleRedirect');
+Route::get(config('instagram-feed.auth_callback_route'), 'Code16\InstagramFeed\AccessTokenController@handleRedirect');

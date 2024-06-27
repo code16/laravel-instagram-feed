@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Dymantic\InstagramFeed;
+namespace Code16\InstagramFeed;
 
 
-use Dymantic\InstagramFeed\Commands\CreateBasicProfile;
-use Dymantic\InstagramFeed\Commands\RefreshAuthorizedFeeds;
-use Dymantic\InstagramFeed\Commands\RefreshTokens;
+use Code16\InstagramFeed\Commands\CreateBasicProfile;
+use Code16\InstagramFeed\Commands\RefreshAuthorizedFeeds;
+use Code16\InstagramFeed\Commands\RefreshTokens;
 use GuzzleHttp\Client;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Collection;

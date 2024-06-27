@@ -1,12 +1,12 @@
 <?php
 
-namespace Dymantic\InstagramFeed\Tests\Instagram;
+namespace Code16\InstagramFeed\Tests\Instagram;
 
-use Dymantic\InstagramFeed\AccessToken;
-use Dymantic\InstagramFeed\InstagramFeed;
-use Dymantic\InstagramFeed\InstagramMedia;
-use Dymantic\InstagramFeed\Profile;
-use Dymantic\InstagramFeed\Tests\TestCase;
+use Code16\InstagramFeed\AccessToken;
+use Code16\InstagramFeed\InstagramFeed;
+use Code16\InstagramFeed\InstagramMedia;
+use Code16\InstagramFeed\Profile;
+use Code16\InstagramFeed\Tests\TestCase;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Http;
 

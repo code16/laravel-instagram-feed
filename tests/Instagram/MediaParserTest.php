@@ -1,10 +1,10 @@
 <?php
 
-namespace Dymantic\InstagramFeed\Tests\Instagram;
+namespace Code16\InstagramFeed\Tests\Instagram;
 
-use Dymantic\InstagramFeed\InstagramMedia;
-use Dymantic\InstagramFeed\MediaParser;
-use Dymantic\InstagramFeed\Tests\TestCase;
+use Code16\InstagramFeed\InstagramMedia;
+use Code16\InstagramFeed\MediaParser;
+use Code16\InstagramFeed\Tests\TestCase;
 
 class MediaParserTest extends TestCase
 {
