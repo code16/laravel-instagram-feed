@@ -6,7 +6,11 @@ use ArrayIterator;
 use Countable;
 use Illuminate\Support\Collection;
 use IteratorAggregate;
+use Traversable;
 
+/**
+ * @implements IteratorAggregate<int,InstagramMedia>
+ */
 class InstagramFeed implements IteratorAggregate, Countable
 {
 
@@ -26,7 +30,10 @@ class InstagramFeed implements IteratorAggregate, Countable
     {
         return new self(null, []);
     }
-
+    
+    /**
+     * @return Collection<int,InstagramMedia>
+     */
     public function collect(): Collection
     {
         return collect($this->items);
@@ -38,8 +45,8 @@ class InstagramFeed implements IteratorAggregate, Countable
             $this->items = $this->profile->refreshFeed($limit)->collect()->all();
         }
     }
-
-    public function getIterator()
+    
+    public function getIterator(): Traversable
     {
         return new ArrayIterator($this->items);
     }
