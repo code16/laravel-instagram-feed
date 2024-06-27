@@ -77,7 +77,8 @@ class MediaParserTest extends TestCase
           {
             "media_type": "IMAGE",
             "media_url": "https://scontent.xx.fbcdn.net/v/t51.2885-15/88377911_489796465235615_7665986482865453688_n.jpg?_nc_cat=103&_nc_sid=8ae9d6&_nc_ohc=yrRAJXdvYI4AX9FZA2-&_nc_ht=scontent.xx&oh=8f5c3ce9f043abfb31fc8b21aefc433e&oe=5E93D95F",
-            "id": "17849438098899018"
+            "id": "17849438098899018",
+            "thumbnail_url": "https://scontent.xx.fbcdn.net/v/t51.2885-15/88377911_489796465235615_7665986482865453688_n.jpg?_nc_cat=103&_nc_sid=8ae9d6&_nc_ohc=yrRAJXdvYI4AX9FZA2-&_nc_ht=scontent.xx&oh=8f5c3ce9f043abfb31fc8b21aefc433e&oe=5E93D95F"
           },
           {
             "media_type": "IMAGE",
@@ -109,19 +110,22 @@ class MediaParserTest extends TestCase
         $this->assertSame([
             'type' => InstagramMedia::TYPE_IMAGE,
             'url' => 'https://scontent.xx.fbcdn.net/v/t51.2885-15/88377911_489796465235615_7665986482865453688_n.jpg?_nc_cat=103&_nc_sid=8ae9d6&_nc_ohc=yrRAJXdvYI4AX9FZA2-&_nc_ht=scontent.xx&oh=8f5c3ce9f043abfb31fc8b21aefc433e&oe=5E93D95F',
-            'id' => '17849438098899018'
+            'thumbnail_url' => "https://scontent.xx.fbcdn.net/v/t51.2885-15/88377911_489796465235615_7665986482865453688_n.jpg?_nc_cat=103&_nc_sid=8ae9d6&_nc_ohc=yrRAJXdvYI4AX9FZA2-&_nc_ht=scontent.xx&oh=8f5c3ce9f043abfb31fc8b21aefc433e&oe=5E93D95F",
+            'id' => '17849438098899018',
         ], $media->children[0]);
 
         $this->assertSame([
             'type' => InstagramMedia::TYPE_IMAGE,
             'url' => 'https://scontent.xx.fbcdn.net/v/t51.2885-15/84381272_1984995381635899_5263984109196147819_n.jpg?_nc_cat=109&_nc_sid=8ae9d6&_nc_ohc=_GH0NffaIucAX9WWveS&_nc_ht=scontent.xx&oh=0871f5013d7eff3336a8f90cc320a6d6&oe=5E921910',
-            'id' => '18132118615037332'
+            'thumbnail_url' => null,
+            'id' => '18132118615037332',
         ], $media->children[1]);
 
         $this->assertSame([
             'type' => InstagramMedia::TYPE_IMAGE,
             'url' => 'https://scontent.xx.fbcdn.net/v/t51.2885-15/88164910_2338159439809338_6922195276317801534_n.jpg?_nc_cat=104&_nc_sid=8ae9d6&_nc_ohc=UasVMdUTi0AAX-mb4IW&_nc_ht=scontent.xx&oh=4ab1132eac9766086fd268b9a80a6410&oe=5E930DAF',
-            'id' => '17894008966462830'
+            'thumbnail_url' => null,
+            'id' => '17894008966462830',
         ], $media->children[2]);
     }
 }
